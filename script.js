@@ -139,8 +139,8 @@ const QUESTIONS = [
   
     const tweetBtn = document.createElement('a');
     tweetBtn.className = 'btn';
-    tweetBtn.textContent = 'Start Again';
-    tweetBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent('I got '+pub+' on this fun quiz!')}`;
+    tweetBtn.textContent = 'Substack';
+    tweetBtn.href = `https://booooks.substack.com`;
     tweetBtn.target = '_blank';
     shareRow.appendChild(tweetBtn);
   
