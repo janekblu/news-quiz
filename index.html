@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Which Newspaper Are You?</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+<header class="hero">
+<h1>Which Newspaper Are You?</h1>
+<p class="lead">A playful personality quiz — pick what feels right and we'll tell you your British newspaper twin. No UK passport needed.</p>
+</header>
+
+
+<section id="quiz" class="card">
+<div id="progress" class="progress"><div id="progress-bar"></div></div>
+<div id="question-area">
+<!-- questions injected by JS -->
+</div>
+
+
+<div class="controls">
+<button id="prevBtn" class="btn muted" disabled>← Prev</button>
+<button id="nextBtn" class="btn">Next →</button>
+</div>
+</section>
+
+
+<section id="result" class="card hidden">
+<!-- result injected by JS -->
+</section>
+
+
+<footer class="footer">
+<small>Built for Substack. Data (anonymised) can be sent to a Google Sheet for easy analysis.</small>
+</footer>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
