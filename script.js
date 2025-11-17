@@ -1,19 +1,19 @@
 // Quiz data: 10 questions (A-F per option)
 const QUESTIONS = [
-    { q: 'Your ideal morning vibe is:', a: ['Deep political thoughts before breakfast','Efficient scan of global news','Market charts and business signals','Ethical coffee + long article','Calm, grown-up reporting','Outrage with your toast'] },
-    { q: 'Which crisis feels most real to you?', a: ['Democracy is fragile','The global economy is wobbling','Markets are nervous','Climate + housing + inequality','Government competence','Society is collapsing because everything is terrible'] },
-    { q: 'Pick a drink:', a: ['Black filter coffee','Airport cold brew','Flat white','Organic tea','Earl Grey','Anything strong, I have complaints'] },
-    { q: 'What’s your preferred type of drama?', a: ['Ideological disputes','Geopolitical tensions','Financial volatility','Social-justice arguments','Quiet political infighting','Celebrity scandal + weather panic'] },
-    { q: 'What motivates you intellectually?', a: ['Big ideas','Global systems','Money and incentives','Social fairness','Stability and order','Having strong opinions'] },
-    { q: 'Your favourite headline tone:', a: ['“The Future of Society”','“The World in 2030”','“Markets React to…”','“How We Can Fix This”','“What Ministers Are Planning”','“SHOCKING NEW CRISIS”'] },
-    { q: 'Pick a hobby:', a: ['Arguing about politics','Tracking global trends','Following markets','Writing opinions online','Listening to a news podcast','Being furious on social media'] },
-    { q: 'Your ideal home looks like:', a: ['Books everywhere','Airport lounge minimalism','Sleek and expensive','Plants and posters','Traditional comfort','Too many headlines open'] },
-    { q: 'What do you secretly judge people for?', a: ['Ignoring history','Not understanding economics','Not budgeting','Not recycling','Being disorganised','Everything'] },
-    { q: 'Choose a political mood:', a: ['Left-ish intellectual','Centrist globalist','Market-friendly realist','Liberal activist','Moderate establishment','Angry conservative'] }
+    {q: 'Your ideal morning vibe is:', a: ['Deep political thoughts before breakfast','Efficient scan of global news','Market charts and business signals','Ethical coffee + long article','Outrage with your toast', 'Tea getting cold, engrossed in latin verses']}
+    {q: 'Pick a drink:', a : ['Single origin filter coffee','Espresso','Flat white from designer mug','Organic tea (Ethically Sourced)','Anything strong, I have complaints','Austere black tea in a chipped mug']}
+    {q: 'Your favourite social media app is:', a: ['Twitter, but only for the essays', 'LinkedIn, bullet points signall efficiency', 'Bloomberg Terminal, masquerading as social media', 'Instagram stories to promote causes and fact-check', 'Facebook, where outrage breathes freely', 'The Notes app—your true publication venue']}
+    {q: 'Which sentence offends you the most?', a: ['Politics is just vibes', "Numbers don't matter","The markets will barely notice", 'Maybe both sides have a point', 'Everything seems absolutely fine today', 'Could you keep it to 500 words?'] }
+    {q: 'On a plane you read:', a: ['A thinkpiece titled "Britain’s Crisis of Confidence"', 'A special report on supply chains', 'The weekend edition, folded with precision', 'A paperback on late-stage capitalism', 'A headline predicting imminent societal collapse', 'A 9,000-word review of a book you didn’t pack.=']}
+    {q: 'Ideal holiday?', a: ['A grey city where they have great museums', 'A conference in the Alps', 'Tuscan villa with WiFi reliable enough for Bloomberg', 'A sustainable retreat with organic brunch', 'Nothing beats a ...', 'Obscure monastery residency']}
+    {q: 'Your type of crisis?', a: ['Democracy is fragile','The global economy is wobbling','Markets are nervous','Climate + housing + inequality','Society is collapsing because everything is terrible', 'Discovering the archive is closed for renovations']}
+    {q: 'What does your ideal home look like?', a: ['Books everywhere','Airport lounge minimalism','Sleek and expensive','Plants and posters','Too many headlines open', 'Comfortable armchair and bookstore merchendise']}
+    {q: 'What do you secretly judge people for?', a: ['Ignoring history','Not understanding economics','Not budgeting','Not recycling','Everything', 'Not reading'] }
+    {q: 'Your friends, behind your back describe you as:', a: ['Endlessly earnest, chronically overthinking, charmingly doomed', 'Analytical, emotionally unavailable, weirdly confident', 'Expensive tastes disguised as pragmatism', 'Well-meaning, anxious, aggressively tote-bagged.', 'Perpetually outraged but lovely to neighbours.', 'Brilliant, unreadable, and slightly insufferable.']}
   ];
   
   // Map letter indices to publications
-  const PUBS = ['New Statesman','The Economist','Financial Times','The Guardian','The Times','Daily Mail'];
+  const PUBS = ['New Statesman','The Economist','Financial Times','The Guardian','Daily Mail', 'The London Review of Books'];
   
   // DOM references
   const questionArea = document.getElementById('question-area');
@@ -94,12 +94,12 @@ const QUESTIONS = [
     const pub = PUBS[best];
   
     const descriptions = {
-      'New Statesman': 'A bookish, left-leaning thinker who loves long arguments about society. You care about ideas and cultural change. You enjoy serious essays and moral conviction. You are opinionated in a thoughtful way. You see politics as a long conversation.',
-      'The Economist': 'A global, analytical mind that loves data and efficient explanations. You prefer big-picture logic to outrage. You value clarity and pragmatic solutions. You are curious about systems and incentives. Charts make you happy.',
-      'Financial Times': 'Serious, financially minded, and practical. You follow markets and care about incentives. You value professionalism and stability. You prefer crisp analysis to drama. You are the "adult in the room" about money matters.',
-      'The Guardian': 'Ethical, creative, and socially minded. You care about fairness and culture. You like long features and care deeply about climate and social issues. You believe activism and empathy can help. You are idealistic but practical.',
-      'The Times': 'A calm, sensible consumer of news who prefers steady reporting. You value order, tradition, and competence. You like clear reporting and reliable sources. You prefer quiet competence over loud spectacle. You are a grown-up about politics.',
-      'Daily Mail': 'A dramatic, emotional instinct: you love scandal and punchy headlines. You enjoy outrage, clear villains, and strong takes. You like stories that provoke a feeling. You sometimes prefer simple stories to nuance. You are passionate and vivid.'
+        'New Statesman': 'You oscillate between moral superiority and existential despair, buy books on inequality you never finish, and forward screenshots of essays labelled “worth your time.” You long for a Scandinavian-style national mission and secretly wish politics were more romantic. You see politics as a long conversation.'
+        'The Economist': 'You believe every human tragedy can be resolved with a chart, think in GDP per capita, and spend weekends drafting policy memos in your Notes app. You describe countries as “promising” or “troubling” with alarming confidence and possess a humour dryer than most deserts. Charts make you happy.'
+        'Financial Times': 'You explain bond yields more easily than emotions, and treat Porsche dealerships as escapist fantasy. Irreversibly bourgeois yet terrified of seeming so, you always act as if you were the "adult in the room" about money matters.'
+        'The Guardian': 'You are fuelled by guilt—ethical, political, and dietary—and cycle everywhere except when it rains, which is always. Your tote bag contains a novel by an author whose name you mispronounce elegantly, you believe earnest debate can fix anything, and your greatest dread is being mistaken for a centrist.'
+        'Daily Mail': 'You wake up offended, subsist on fury and biscuits, and believe civilisation is always one headline from collapse. You sometimes prefer simple stories to nuance and treat celebrity gossip as national security matter. Somehow, you remain inexplicably cheerful about your garden.'
+        'London Review of Books': 'You devour 10,000-word essays on medieval agriculture, are perpetually “between books”, which means you are reading at least sic simultaneously. Your flat is full of pastel colourde teatowells and strangly unsettling posters. Literary critcisim is a competetive sport for you. Once a year you buy a cookbook and proceed to never cook from it.'
     };
   
     resultBox.innerHTML = '';
@@ -138,7 +138,7 @@ const QUESTIONS = [
   
     const tweetBtn = document.createElement('a');
     tweetBtn.className = 'btn';
-    tweetBtn.textContent = 'Share on X';
+    tweetBtn.textContent = 'Start Again';
     tweetBtn.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent('I got '+pub+' on this fun quiz!')}`;
     tweetBtn.target = '_blank';
     shareRow.appendChild(tweetBtn);
