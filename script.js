@@ -150,6 +150,42 @@ const QUESTIONS = [
     document.getElementById('quiz').classList.add('hidden');
   }
   
-  // initialize after DOM is ready
-  document.addEventListener('DOMContentLoaded', () => renderQuestion(0));
+  // Newspaper link + About section
+const extraRow = document.createElement('div');
+extraRow.className = 'extra-row';
+
+
+const links = {
+'New Statesman': 'https://www.newstatesman.com',
+'The Economist': 'https://www.economist.com',
+'Financial Times': 'https://www.ft.com',
+'The Guardian': 'https://www.theguardian.com',
+'The Times': 'https://www.thetimes.co.uk',
+'Daily Mail': 'https://www.dailymail.co.uk'
+};
+
+
+const siteLink = document.createElement('a');
+siteLink.className = 'btn';
+siteLink.textContent = 'Visit the newspaper website';
+siteLink.href = links[pub];
+siteLink.target = '_blank';
+
+
+const aboutBtn = document.createElement('a');
+aboutBtn.className = 'btn';
+aboutBtn.textContent = 'About this quiz';
+aboutBtn.href = 'https://your-substack-or-about-link.com';
+aboutBtn.target = '_blank';
+
+
+extraRow.appendChild(siteLink);
+extraRow.appendChild(aboutBtn);
+card.appendChild(extraRow);
+resultBox.appendChild(card);
+resultBox.classList.remove('hidden');
+document.getElementById('quiz').classList.add('hidden');
+
+// initialize after DOM is ready
+document.addEventListener('DOMContentLoaded', () => renderQuestion(0));
   
