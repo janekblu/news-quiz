@@ -90,17 +90,26 @@ const QUESTIONS = [
   
   function showResult(){
     const counts = {0:0,1:0,2:0,3:0,4:0,5:0};
-    answers.forEach(a => { if(a !== null) counts[a] = (counts[a]||0) + 1; });
+    answers.forEach(a => { if(a !== null) counts[a]++; });
     const best = Object.keys(counts).reduce((a,b)=> counts[a]>=counts[b]?a:b);
     const pub = PUBS[best];
   
     const descriptions = {
-        'New Statesman': 'You oscillate between moral superiority and existential despair, buy books on inequality you never finish, and forward screenshots of essays labelled “worth your time.” You long for a Scandinavian-style national mission and secretly wish politics were more romantic. You see politics as a long conversation.',
-        'The Economist': 'You believe every human tragedy can be resolved with a chart, think in GDP per capita, and spend weekends drafting policy memos in your Notes app. You describe countries as “promising” or “troubling” with alarming confidence and possess a humour dryer than most deserts. Charts make you happy.',
-        'Financial Times': 'You explain bond yields more easily than emotions, and treat Porsche dealerships as escapist fantasy. Irreversibly bourgeois yet terrified of seeming so, you always act as if you were the "adult in the room" about money matters.',
-        'The Guardian': 'You are fuelled by guilt—ethical, political, and dietary—and cycle everywhere except when it rains, which is always. Your tote bag contains a novel by an author whose name you mispronounce elegantly, you believe earnest debate can fix anything, and your greatest dread is being mistaken for a centrist.',
-        'Daily Mail': 'You wake up offended, subsist on fury and biscuits, and believe civilisation is always one headline from collapse. You sometimes prefer simple stories to nuance and treat celebrity gossip as national security matter. Somehow, you remain inexplicably cheerful about your garden.',
-        'London Review of Books': 'You devour 10,000-word essays on medieval agriculture, are perpetually “between books”, which means you are reading at least six simultaneously. Your flat is full of pastel coloured teatowells and strangely unsettling posters. Literary criticisim is a competetive sport for you. Once a year you buy a cookbook and proceed to never cook from it.',
+        'New Statesman': 'You oscillate between moral superiority and existential despair...',
+        'The Economist': 'You believe every human tragedy can be resolved with a chart...',
+        'Financial Times': 'You explain bond yields more easily than emotions...',
+        'The Guardian': 'You are fuelled by guilt—ethical, political, and dietary...',
+        'Daily Mail': 'You wake up offended, subsist on fury and biscuits...',
+        'London Review of Books': 'You devour 10,000-word essays on medieval agriculture...'
+    };
+  
+    const links = {
+        'New Statesman': 'https://www.newstatesman.com',
+        'The Economist': 'https://www.economist.com',
+        'Financial Times': 'https://www.ft.com',
+        'The Guardian': 'https://www.theguardian.com',
+        'Daily Mail': 'https://www.dailymail.co.uk',
+        'London Review of Books': 'https://www.lrb.co.uk'
     };
   
     resultBox.innerHTML = '';
@@ -119,9 +128,12 @@ const QUESTIONS = [
   
     const breakdown = document.createElement('p');
     breakdown.className = 'small';
-    breakdown.textContent = 'Answer breakdown: ' + JSON.stringify(answers.map(x => x===null?null: ['NS','Econ','FT','Guardian','Mail', 'LRB'][x]));
+    breakdown.textContent = 'Answer breakdown: ' + JSON.stringify(
+        answers.map(x => x===null?null: ['NS','Econ','FT','Guardian','Mail','LRB'][x])
+    );
     card.appendChild(breakdown);
   
+    // --- Share Row ---
     const shareRow = document.createElement('div');
     shareRow.className = 'share-row';
   
@@ -129,7 +141,7 @@ const QUESTIONS = [
     shareBtn.className = 'btn';
     shareBtn.textContent = 'Copy result text';
     shareBtn.addEventListener('click', () => {
-      const text = `I got ${pub} on the \"Which Newspaper Are You?\" quiz!`;
+      const text = `I got ${pub} on the "Which Newspaper Are You?" quiz!`;
       navigator.clipboard.writeText(text).then(()=>{
         shareBtn.textContent = 'Copied!';
         setTimeout(()=> shareBtn.textContent = 'Copy result text',1500);
@@ -144,49 +156,20 @@ const QUESTIONS = [
     tweetBtn.target = '_blank';
     shareRow.appendChild(tweetBtn);
   
-    card.appendChild(shareRow);
-    resultBox.appendChild(card);
-    resultBox.classList.remove('hidden');
-    document.getElementById('quiz').classList.add('hidden');
-
+    // NEW: Visit newspaper button
+    const visitBtn = document.createElement('a');
+    visitBtn.className = 'btn';
+    visitBtn.textContent = `Visit ${pub}`;
+    visitBtn.href = links[pub];
+    visitBtn.target = '_blank';
+    shareRow.appendChild(visitBtn);
   
-        // Newspaper link + About section
-    const extraRow = document.createElement('div');
-    extraRow.className = 'extra-row';
-
-
-    const links = {
-'New Statesman': 'https://www.newstatesman.com',
-'The Economist': 'https://www.economist.com',
-'Financial Times': 'https://www.ft.com',
-'The Guardian': 'https://www.theguardian.com',
-'The Times': 'https://www.thetimes.co.uk',
-'Daily Mail': 'https://www.dailymail.co.uk'
-    };
-
-
-    const siteLink = document.createElement('a');
-    siteLink.className = 'btn';
-    siteLink.textContent = 'Visit the newspaper website';
-    siteLink.href = links[pub];
-    siteLink.target = '_blank';
-
-
-    const aboutBtn = document.createElement('a');
-    aboutBtn.className = 'btn';
-    aboutBtn.textContent = 'About this quiz';
-    aboutBtn.href = 'https://your-substack-or-about-link.com';
-    aboutBtn.target = '_blank';
-
-
-    extraRow.appendChild(siteLink);
-    extraRow.appendChild(aboutBtn);
-    card.appendChild(extraRow);
+    card.appendChild(shareRow);
+  
     resultBox.appendChild(card);
     resultBox.classList.remove('hidden');
     document.getElementById('quiz').classList.add('hidden');
-
-}
+  }
 // initialize after DOM is ready
 document.addEventListener('DOMContentLoaded', () => renderQuestion(0));
   
