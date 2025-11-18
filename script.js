@@ -6,8 +6,8 @@ const QUESTIONS = [
     {q: 'Which sentence offends you the most?', a: ['Politics is just vibes', "Numbers don't matter","The markets will barely notice", 'Maybe both sides have a point', 'Everything seems absolutely fine today', 'Could you keep it to 500 words?'] },
     {q: 'On a plane you read:', a: ['A thinkpiece titled "Britain’s Crisis of Confidence"', 'A special report on supply chains', 'The weekend edition, folded with precision', 'A paperback on late-stage capitalism', 'A headline predicting imminent societal collapse', 'A 9,000-word review of a book you didn’t pack.']},
     {q: 'Ideal holiday?', a: ['A grey city where they have great museums', 'A conference in the Alps', 'Tuscan villa with WiFi reliable enough for Bloomberg', 'A sustainable retreat with organic brunch', 'Somewhere warm, where things are like they used to be', 'Obscure monastery residency']},
-    {q: 'Your type of crisis?', a: ['Democracy is fragile','The global economy is wobbling','Markets are nervous','Climate + housing + inequality','Society is collapsing because everything is terrible', 'Discovering the archive is closed for renovations']},
-    {q: 'What does your ideal home look like?', a: ['Books everywhere','Airport lounge minimalism','Sleek and expensive','Plants and posters','Too many headlines open', 'Comfortable armchair and bookstore merchandise']},
+    {q: 'Your type of crisis?', a: ['Democracy is fragile','The ascent of China','Lizz Truss Mini Budget','Climate + housing + inequality','Society is collapsing because everything is terrible', 'Discovering the archive is closed for renovations']},
+    {q: 'What does your ideal home look like?', a: ['Unifinished books everywhere','Whatever goes as long as it has a wine cooler','Sleek and expensive','Plants and posters','Too many headlines open', 'Comfortable armchair and bookstore merchandise']},
     {q: 'What do you secretly judge people for?', a: ['Ignoring history','Not understanding economics','Not budgeting','Not recycling','Everything', 'Not reading'] },
     {q: 'Your friends, behind your back describe you as:', a: ['Endlessly earnest, chronically overthinking, charmingly doomed', 'Analytical, emotionally unavailable, weirdly confident', 'Expensive tastes disguised as pragmatism', 'Well-meaning, anxious, aggressively tote-bagged.', 'Perpetually outraged but lovely to neighbours.', 'Brilliant, unreadable, and slightly insufferable.']}
   ];
@@ -95,12 +95,12 @@ const QUESTIONS = [
     const pub = PUBS[best];
   
     const descriptions = {
-        'New Statesman': 'You oscillate between moral superiority and existential despair...',
-        'The Economist': 'You believe every human tragedy can be resolved with a chart...',
-        'Financial Times': 'You explain bond yields more easily than emotions...',
-        'The Guardian': 'You are fuelled by guilt—ethical, political, and dietary...',
-        'Daily Mail': 'You wake up offended, subsist on fury and biscuits...',
-        'London Review of Books': 'You devour 10,000-word essays on medieval agriculture...'
+        'New Statesman': 'You oscillate between moral superiority and existential despair, buy books on inequality you never finish, and forward screenshots of essays labelled “worth your time.” You long for a Scandinavian-style national mission and secretly wish politics were more romantic. You see politics as a long conversation.',
+        'The Economist': 'You believe every human tragedy can be resolved with a chart, think in GDP per capita, and spend weekends drafting policy memos in your Notes app. You describe countries as “promising” or “troubling” with alarming confidence and possess a humour dryer than most deserts. Charts make you happy.',
+        'Financial Times': 'You explain bond yields more easily than emotions, and treat Porsche dealerships as escapist fantasy. Irreversibly bourgeois yet terrified of seeming so, you always act as if you were the "adult in the room" about money matters.',
+        'The Guardian': 'You are fuelled by guilt—ethical, political, and dietary—and cycle everywhere except when it rains, which is always. Your tote bag contains a novel by an author whose name you mispronounce elegantly, you believe earnest debate can fix anything, and your greatest dread is being mistaken for a centrist.',
+        'Daily Mail': 'You wake up offended, subsist on fury and biscuits, and believe civilisation is always one headline from collapse. You sometimes prefer simple stories to nuance and treat celebrity gossip as national security matter. Somehow, you remain inexplicably cheerful about your garden.',
+        'London Review of Books': 'You devour 10,000-word essays on medieval agriculture, are perpetually “between books”, which means you are reading at least six simultaneously. Your flat is full of pastel tea towells and strangely unsettling posters. Literary criticisim is a competetive sport for you. Once a year you buy a cookbook and proceed to never cook from it.'
     };
   
     const links = {
